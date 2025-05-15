@@ -1,8 +1,13 @@
 from masks import get_mask_account, get_mask_card_number
+from widget import mask_account_card
 
-card_number = 7000792289606361
-account_number = 73654108430135874305
+# card_number = 7000792289606361
+# account_number = 73654108430135874305
+#
+#
+# get_mask_card_number(card_number)
+# get_mask_account(account_number)
 
+many_numbers= 'Visa Platinum 7000792289606361'
 
-get_mask_card_number(card_number)
-get_mask_account(account_number)
+mask_account_card(many_numbers)

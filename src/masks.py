@@ -17,3 +17,6 @@ def get_mask_account(account_number: int) -> str:
     result = "**" + account_number_str[-4:]
     print(result)
     return result
+
+
+#Думаю будет хорошей идеей реализовать цикл пока не цифра - добавлять элемент в список который затем сошьем вместо с цифрой кода
