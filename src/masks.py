@@ -1,22 +1,24 @@
-def get_mask_card_number(card_number: int) -> str:
+def get_mask_card_number(full_name: str) -> str:
     """Принимает номер карты, вовращает номер карты со скрытыми числами"""
-    card_number_str = str(card_number)
+    card_numbers=full_name[-16:]
+    card_letters=full_name[:-16]
     card_number_hidden = ""
-    for number in range(0, len(card_number_str), 4):
-        card_number_hidden += card_number_str[number : number + 4] + " "
-    result = card_number_hidden[0:7] + "** **** " + card_number_hidden[-5:]
+    for number in range(0, len(card_numbers), 4):
+        card_number_hidden += card_numbers[number : number + 4] + " "
+    result = card_letters + card_number_hidden[0:7] + "** **** " + card_number_hidden[-5:]
     print(result)
 
     return result
 
 
-def get_mask_account(account_number: int) -> str:
+def get_mask_account(full_name: str) -> str:
     """Принимает номер аккаунта, возвращает номер аккаунта со
     скрытыми цифарами"""
-    account_number_str = str(account_number)
-    result = "**" + account_number_str[-4:]
+    account_numbers = full_name[-4:]
+    account_letters = full_name[:-20]
+    result = account_letters + "**" + account_numbers[-4:]
     print(result)
+
     return result
 
 
-#Думаю будет хорошей идеей реализовать цикл пока не цифра - добавлять элемент в список который затем сошьем вместо с цифрой кода
