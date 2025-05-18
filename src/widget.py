@@ -3,8 +3,11 @@ from masks import get_mask_account
 
 
 def mask_account_card(full_name: str) -> None:
-    key_word = "Счет"
-    if 'key_word' in full_name:
+    count=''
+    for symbol in full_name:
+        if symbol.isdigit():
+            count+=symbol
+    if len(count) == 20:
         get_mask_account(full_name)
     else:
         get_mask_card_number(full_name)
