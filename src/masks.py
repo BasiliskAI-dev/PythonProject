@@ -1,5 +1,5 @@
 def get_mask_card_number(full_name: str) -> str:
-    """Принимает номер карты, вовращает номер карты со скрытыми числами"""
+    """Принимает номер карты, возвращает номер карты со скрытыми числами"""
     card_numbers = full_name[-16:]
     card_letters = full_name[:-16]
     card_number_hidden = ""
@@ -13,7 +13,7 @@ def get_mask_card_number(full_name: str) -> str:
 
 def get_mask_account(full_name: str) -> str:
     """Принимает номер аккаунта, возвращает номер аккаунта со
-    скрытыми цифарами"""
+    скрытыми цифрами"""
     account_numbers = full_name[-4:]
     account_letters = full_name[:-20]
     result = account_letters + "**" + account_numbers[-4:]

@@ -1,16 +1,17 @@
-def filter_by_state(state=list, filter_of_sort='EXECUTED') -> list:
+def filter_by_state(info_account: list, filter_of_sort: str = "EXECUTED") -> list:
+    """фильтрует по state"""
+
     filtered_list = []
-    for list_of_workbooks in state:
-        if list_of_workbooks['state'] == filter_of_sort:
+    for list_of_workbooks in info_account:
+        if list_of_workbooks["state"] == filter_of_sort:
             filtered_list.append(list_of_workbooks)
     print(filtered_list)
-    return (filtered_list)
+    return filtered_list
 
 
-state = [{'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
-         {'id': 615064591, 'state': 'CANCELED', 'date': '2018-10-14T08:21:33.419441'},
-         {'id': 594226727, 'state': 'CANCELED', 'date': '2018-09-12T21:27:25.241689'},
-         {'id': 939719570, 'state': 'EXECUTED', 'date': '2018-06-30T02:08:58.425572'}]
+def sort_by_date(info_account: list, parametr: bool = True) -> list:
+    """фильтрует по дате по убыванию"""
 
-filter_by_state(state, "CANCELED")
-
+    info_account.sort(reverse=parametr, key=lambda x: x["date"])
+    print(info_account)
+    return info_account
