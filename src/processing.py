@@ -9,9 +9,9 @@ def filter_by_state(info_account: list, filter_of_sort: str = "EXECUTED") -> lis
     return filtered_list
 
 
-def sort_by_date(info_account: list, parametr: bool = True) -> list:
+def sort_by_date(info_account: list, key_to_sort: bool = True) -> list:
     """фильтрует по дате по убыванию"""
 
-    info_account.sort(reverse=parametr, key=lambda x: x["date"])
+    info_account.sort(reverse=key_to_sort, key=lambda x: x["date"])
     print(info_account)
     return info_account
