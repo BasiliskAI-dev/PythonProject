@@ -1,3 +1,6 @@
+from os import getcwd
+
+
 def get_mask_card_number(full_name: str) -> str:
     """Принимает номер карты, возвращает номер карты со скрытыми числами"""
     card_numbers = full_name[-16:]
