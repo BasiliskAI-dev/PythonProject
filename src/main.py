@@ -1,7 +1,7 @@
 from processing import filter_by_state, sort_by_date
 from widget import get_date, mask_account_card
 
-card_number = "visa platinum 700079228960636"
+card_number = "visa platinum 7000792289606361"
 account_number = "Счет 73654108430135874305"
 date = "2024-03-11T02:26:18.671407"
 
