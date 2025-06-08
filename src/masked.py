@@ -6,8 +6,8 @@ def get_mask_card_number(full_name: str) -> str:
         if item.isdigit():
             card_numbers += item
     if len(card_numbers) != 16:
-            result = "Введен некорректный номер карты"
-            raise ValueError(result)
+        result = "Введен некорректный номер карты"
+        raise ValueError(result)
     else:
         card_number_hidden = ""
         for number in range(0, len(card_numbers), 4):
@@ -27,7 +27,7 @@ def get_mask_account(full_name: str) -> str:
             account_number += item
     if len(account_number) != 20:
         result = "Введен некорректный номер аккаунта"
-        print(result)
+        raise ValueError(result)
     else:
         account_letters = full_name[:-20]
         result = account_letters + "**" + account_number[-4:]

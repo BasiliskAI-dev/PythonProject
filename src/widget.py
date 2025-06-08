@@ -23,6 +23,6 @@ def mask_account_card(full_name: str) -> str:
 def get_date(date: str) -> str:
     """Возвращает короткую версию даты"""
 
-    # short_date = date[8:10] + "." + date[5:7] + "." + date[0:4]
     short_date = datetime.fromisoformat(date)
+    print(short_date.strftime("%d.%m.%Y"))
     return short_date.strftime("%d.%m.%Y")

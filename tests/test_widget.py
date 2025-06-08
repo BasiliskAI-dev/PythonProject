@@ -4,7 +4,7 @@ from src.widget import get_date, mask_account_card
 
 
 @pytest.mark.parametrize(
-    "name, result", 
+    "name, result",
     [
         ("visa platinum 7000792289640636", "visa platinum 7000 79** **** 0636 "),
         ("Maestro 1596837868705199", "Maestro 1596 83** **** 5199 "),
@@ -14,10 +14,10 @@ from src.widget import get_date, mask_account_card
         ("", "Введенные данные не являются банковскими реквизитами"),
     ],
 )
-def test_mask_account_card(name, result):
+def test_mask_account_card(name: str, result: None) -> None:
     assert mask_account_card(name) == result
 
 
 @pytest.mark.parametrize("date, result", [("2024-03-11T02:26:18.671407", "11.03.2024"), ("2024-03-11", "11.03.2024")])
-def test_get_date(date, result):
+def test_get_date(date: str, result: str) -> None:
     assert get_date(date) == result
