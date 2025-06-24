@@ -1,9 +1,14 @@
 from typing import Any, Generator
 
 
-def filter_by_currency(transactions: list, valute: str) -> Generator[Any, Any, None]:
+def filter_by_currency(transactions: list, valute: str) -> Generator[Any, Any, None] or str:
     """Возвращает словарь из списка transactions по коду valute"""
-    gen = (x for x in transactions if x["operationAmount"]["currency"]["code"] == valute)
+    gen = (
+        x
+        for x in transactions
+        if x.get("operationAmount", {}).get("currency", {}).get("code", None) == valute
+        or x.get("currency_code") == valute
+    )
     return gen
 
 
@@ -23,7 +28,3 @@ def card_number_generator(start: int, stop: int) -> Generator[Any, Any, None]:
             new_number += str_default_number[_ : _ + 4] + " "
         yield new_number
         default_number += 1
-
-
-for card_number in card_number_generator(1234123412341234, 1234123412349999):
-    print(card_number)
