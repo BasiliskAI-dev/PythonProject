@@ -1,0 +1,8 @@
+Вызов функции card_number_generator с аргументами: args=(1, 2), kwargs={}
+Функция card_number_generator вернула: <generator object card_number_generator at 0x000002738B016CE0>
+Вызов функции card_number_generator с аргументами: args=(1, 2), kwargs={}
+Функция card_number_generator вернула: <generator object card_number_generator at 0x000001CDE4123AB0>
+Вызов функции card_number_generator с аргументами: args=(1, 2), kwargs={}
+Функция card_number_generator вернула: <generator object card_number_generator at 0x0000011C285D7450>
+Вызов функции card_number_generator с аргументами: args=(1, 2), kwargs={}
+Функция card_number_generator вернула: <generator object card_number_generator at 0x000001736B0839A0>

@@ -3,9 +3,9 @@ from typing import Any
 
 
 def log(filename=""):
-    def inner(func):
+    def inner(func) -> Any:
         @wraps(func)
-        def wrapper(*args: Any, **kwargs: Any):
+        def wrapper(*args: Any, **kwargs: Any) -> func:
             if bool(filename):
                 try:
                     with open(f"{filename}.txt", "a", encoding="utf-8") as file:
@@ -17,7 +17,7 @@ def log(filename=""):
                 except Exception as e:
                     with open(f"{filename}.txt", "a", encoding="utf-8") as file:
                         file.write(f"Ошибка в {func.__name__}: {e}")
-                    raise Exception
+                        raise
             else:
                 try:
                     print(f"Вызов функции {func.__name__} с аргументами: args={args}, kwargs={kwargs}\n")
@@ -26,7 +26,7 @@ def log(filename=""):
                     return result
                 except Exception as e:
                     print(f"Ошибка в {func.__name__}: {e}")
-                    raise Exception
+                    raise
 
         return wrapper
 
