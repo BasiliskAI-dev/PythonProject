@@ -1,3 +1,4 @@
+from src.generators import card_number_generator
 from src.processing import filter_by_state, sort_by_date
 from src.widget import get_date, mask_account_card
 
@@ -26,3 +27,6 @@ info_account2 = [
 ]
 
 sort_by_date(info_account2)
+
+for card_number in card_number_generator(5, 10):
+    print(card_number)

@@ -1,5 +1,7 @@
 import pytest
 
+from src.decorators import log
+
 dict_1 = [
     {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
     {"id": 939719570, "state": "NOT-EXECUTED", "date": "2018-06-30T02:08:58.425572"},
@@ -53,7 +55,7 @@ testdata_3 = [
 
 
 @pytest.fixture
-def transactions_fixture():
+def transactions_fixture() -> list:
     return [
         {
             "id": 939719570,
@@ -152,4 +154,49 @@ result_test_transaction_descriptions = [
     "Перевод организации",
 ]
 
-transactions_empty = []
+transactions_empty: list = []
+
+
+@log()
+def get_mask_card_number(full_name: str) -> str:
+    """Принимает номер карты, возвращает номер карты со скрытыми числами"""
+    card_letters = full_name[:-16]
+    card_numbers = ""
+    for item in full_name:
+        if item.isdigit():
+            card_numbers += item
+    if len(card_numbers) != 16:
+        result = "Введен некорректный номер карты"
+        raise ValueError(result)
+    else:
+        card_number_hidden = ""
+        for number in range(0, len(card_numbers), 4):
+            card_number_hidden += card_numbers[number : number + 4] + " "
+        result = card_letters + card_number_hidden[0:7] + "** **** " + card_number_hidden[-5:]
+        print(result)
+
+    return result
+
+
+@log("log")
+def get_mask_card_number_file(full_name: str) -> str:
+    """Принимает номер карты, возвращает номер карты со скрытыми числами"""
+    card_letters = full_name[:-16]
+    card_numbers = ""
+    for item in full_name:
+        if item.isdigit():
+            card_numbers += item
+    if len(card_numbers) != 16:
+        result = "Введен некорректный номер карты"
+        raise ValueError(result)
+    else:
+        card_number_hidden = ""
+        for number in range(0, len(card_numbers), 4):
+            card_number_hidden += card_numbers[number : number + 4] + " "
+        result = card_letters + card_number_hidden[0:7] + "** **** " + card_number_hidden[-5:]
+        print(result)
+
+    return result
+
+
+# get_mask_card_number_file("visa platinum 700079228960636115656")
