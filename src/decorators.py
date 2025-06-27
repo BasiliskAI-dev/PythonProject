@@ -3,6 +3,7 @@ from typing import Any
 
 
 def log(filename=""):
+    """"Функция является декоратором и в зависимости от ввода пишет лог в файл или выводит его в консоль"""
     def inner(func) -> Any:
         @wraps(func)
         def wrapper(*args: Any, **kwargs: Any) -> func:
