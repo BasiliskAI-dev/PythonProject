@@ -200,3 +200,41 @@ def get_mask_card_number_file(full_name: str) -> str:
 
 
 # get_mask_card_number_file("visa platinum 700079228960636115656")
+
+
+operation12 = {
+    "id": 873106923,
+    "state": "EXECUTED",
+    "date": "2019-03-23T01:09:46.296404",
+    "operationAmount": {"amount": "43318.34", "currency": {"name": "руб.", "code": "EUR"}},
+    "description": "Перевод со счета на счет",
+    "from": "Счет 44812258784861134719",
+    "to": "Счет 74489636417521191160",
+}
+
+operation12_RUB = {
+    "id": 873106923,
+    "state": "EXECUTED",
+    "date": "2019-03-23T01:09:46.296404",
+    "operationAmount": {"amount": "43318.34", "currency": {"name": "руб.", "code": "EUR"}},
+    "description": "Перевод со счета на счет",
+    "from": "Счет 44812258784861134719",
+    "to": "Счет 74489636417521191160",
+}
+
+json_response = """
+{
+    "success": true,
+    "query": {
+        "from": "EUR",
+        "to": "RUB",
+        "amount": 43318.34
+    },
+    "info": {
+        "timestamp": 1751832904,
+        "rate": 92.831987
+    },
+    "date": "2025-07-06",
+    "result": 4021327.575742
+}
+"""
