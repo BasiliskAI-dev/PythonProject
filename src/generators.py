@@ -1,7 +1,9 @@
 from typing import Any, Generator
 
+from src.decorators import log
 
-def filter_by_currency(transactions: list, valute: str) -> Generator[Any, Any, None] or str:
+
+def filter_by_currency(transactions: list, valute: str) -> Generator[Any, Any, None]:
     """Возвращает словарь из списка transactions по коду valute"""
     gen = (
         x
@@ -18,6 +20,7 @@ def transaction_descriptions(transactions: list) -> Generator[Any, Any, None]:
     return gen
 
 
+@log("logging")
 def card_number_generator(start: int, stop: int) -> Generator[Any, Any, None]:
     """Возвращает номер карты в диапазоне от start до stop"""
     default_number = 10000000000000000 + start
