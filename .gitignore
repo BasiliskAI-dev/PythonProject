@@ -174,3 +174,4 @@ cython_debug/
 .pypirc
 
 tests/log.txt
+src/lesssons.py
