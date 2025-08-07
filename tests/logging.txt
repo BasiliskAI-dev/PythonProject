@@ -2,3 +2,7 @@
 Функция card_number_generator вернула: <generator object card_number_generator at 0x0000025025077EF0>
 Вызов функции card_number_generator с аргументами: args=(1, 2), kwargs={}
 Функция card_number_generator вернула: <generator object card_number_generator at 0x0000027593727EF0>
+Вызов функции card_number_generator с аргументами: args=(1, 2), kwargs={}
+Функция card_number_generator вернула: <generator object card_number_generator at 0x000001D5E1D03670>
+Вызов функции card_number_generator с аргументами: args=(1, 2), kwargs={}
+Функция card_number_generator вернула: <generator object card_number_generator at 0x000001EFF59DE570>

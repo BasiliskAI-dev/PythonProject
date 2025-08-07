@@ -32,3 +32,7 @@ def show_trans(path: str) -> list:
     except FileNotFoundError:
         app_logger.critical("ОШИБКА! Файл не найден в директории. Проверьте директорию")
         return []
+
+
+# path2 = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', "data", "operations.json"))
+# print(show_trans(path2))

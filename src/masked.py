@@ -29,7 +29,6 @@ def get_mask_card_number(full_name: str) -> str:
         for number in range(0, len(card_numbers), 4):
             card_number_hidden += card_numbers[number : number + 4] + " "
         result = card_letters + card_number_hidden[0:7] + "** **** " + card_number_hidden[-5:]
-        print(result)
         app_logger.info("Программа закончила свою работу")
     return result
 
@@ -51,6 +50,5 @@ def get_mask_account(full_name: str) -> str:
         app_logger.info("Программа отработала корректно, шифруется номер аккаунта")
         account_letters = full_name[:-20]
         result = account_letters + "**" + account_number[-4:]
-        print(result)
         app_logger.info("Программа закончила свою работу")
     return result
