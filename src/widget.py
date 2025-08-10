@@ -7,6 +7,8 @@ def mask_account_card(full_name: str) -> str:
     """Функция решает какую далее использовать функцию"""
 
     count = ""
+    if full_name is None:
+        return ""
     for symbol in full_name:
         if symbol.isdigit():
             count += symbol
@@ -24,5 +26,5 @@ def get_date(date: str) -> str:
     """Возвращает короткую версию даты"""
 
     short_date = datetime.fromisoformat(date)
-    print(short_date.strftime("%d.%m.%Y"))
+    # print(short_date.strftime("%d.%m.%Y"))
     return short_date.strftime("%d.%m.%Y")
