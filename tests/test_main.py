@@ -1,16 +1,19 @@
 import pytest
-from main import Product, Category
+
+from main import Category, Product
 
 
 @pytest.fixture
 def product_cucumber() -> Product:
-    return Product('Огурец', 'Зеленый овощ', 120.5, 5)
+    return Product("Огурец", "Зеленый овощ", 120.5, 5)
+
 
 def test_init(product_cucumber):
-    assert product_cucumber.name == 'Огурец'
-    assert product_cucumber.description == 'Зеленый овощ'
+    assert product_cucumber.name == "Огурец"
+    assert product_cucumber.description == "Зеленый овощ"
     assert product_cucumber.price == 120.5
     assert product_cucumber.quantity == 5
+
 
 def test_category_initialization():
     product1 = Product("Ноутбук", "Мощный игровой ноутбук", 999.99, 5)

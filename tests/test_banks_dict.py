@@ -1,4 +1,3 @@
-
 from src.banks_dict import process_bank_operations, search_in_list
 
 # Тестовые данные
