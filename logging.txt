@@ -80,3 +80,7 @@
 Функция card_number_generator вернула: <generator object card_number_generator at 0x000001836EB65690>
 Вызов функции card_number_generator с аргументами: args=(1, 2), kwargs={}
 Функция card_number_generator вернула: <generator object card_number_generator at 0x000001A7C14F98B0>
+Вызов функции card_number_generator с аргументами: args=(1, 2), kwargs={}
+Функция card_number_generator вернула: <generator object card_number_generator at 0x00000265B32B5AD0>
+Вызов функции card_number_generator с аргументами: args=(1, 2), kwargs={}
+Функция card_number_generator вернула: <generator object card_number_generator at 0x000001A7D77657A0>
